@@ -1,0 +1,9 @@
+[submodule "axl"]
+	path = axl
+	url = git@git.tibbo.net:axl
+[submodule "jancy"]
+	path = jancy
+	url = git@git.tibbo.net:jancy
+[submodule "graco"]
+	path = graco
+	url = git@git.tibbo.net:graco
