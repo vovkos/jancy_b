@@ -1,9 +1,9 @@
 [submodule "axl"]
 	path = axl
-	url = git@git.tibbo.net:axl
+	url = git@github.com:vovkos/axl.git
 [submodule "jancy"]
 	path = jancy
-	url = git@git.tibbo.net:jancy
+	url = git@github.com:vovkos/jancy.git
 [submodule "graco"]
 	path = graco
-	url = git@git.tibbo.net:graco
+	url = git@github.com:vovkos/graco.git
