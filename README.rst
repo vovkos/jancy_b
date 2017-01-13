@@ -12,6 +12,7 @@
 Jancy
 =====
 .. image:: https://travis-ci.org/vovkos/jancy_b.svg?branch=master
+	:target: https://travis-ci.org/vovkos/jancy_b
 
 Abstract
 --------
