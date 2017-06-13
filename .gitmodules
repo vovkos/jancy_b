@@ -1,12 +1,12 @@
 [submodule "axl"]
 	path = axl
-	url = http://github.com/vovkos/axl
+	url = https://github.com/vovkos/axl
 	pushurl = git@github.com:vovkos/axl.git
 [submodule "jancy"]
 	path = jancy
-	url = http://github.com/vovkos/jancy
+	url = https://github.com/vovkos/jancy
 	pushurl = git@github.com:vovkos/jancy.git
 [submodule "graco"]
 	path = graco
-	url = http://github.com/vovkos/graco
+	url = https://github.com/vovkos/graco
 	pushurl = git@github.com:vovkos/graco.git
