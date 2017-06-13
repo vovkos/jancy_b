@@ -9,8 +9,8 @@
 ..
 .. .............................................................................
 
-Jancy
-=====
+Jancy (bundle repo)
+===================
 .. image:: https://travis-ci.org/vovkos/jancy_b.svg?branch=master
 	:target: https://travis-ci.org/vovkos/jancy_b
 .. image:: https://ci.appveyor.com/api/projects/status/hiej06p166untd0u?svg=true
