@@ -1,0 +1,64 @@
+#...............................................................................
+#
+#  This file is part of the Graco toolkit.
+#
+#  Graco is distributed under the MIT license.
+#  For details see accompanying license.txt file,
+#  the public copy of which is also available at:
+#  http://tibbo.com/downloads/archive/graco/license.txt
+#
+#...............................................................................
+
+branches:
+    only:
+        - master
+
+image: Visual Studio 2015
+
+init:
+    - git config --global core.autocrlf input
+
+clone_folder:  c:\projects\jancy
+clone_depth:  1
+
+matrix:
+    fast_finish: false
+
+platform:
+    - x64
+    - x86
+
+configuration:
+    - Debug
+    - Release
+
+environment:
+    matrix:
+        -   LLVM_VERSION: 3.4.2
+            TOOLCHAIN:    msvc10
+
+        -   LLVM_VERSION: 3.4.2
+            TOOLCHAIN:    msvc12
+
+        -   LLVM_VERSION: 3.4.2
+            TOOLCHAIN:    msvc14
+
+        -   LLVM_VERSION: 3.9.1
+            TOOLCHAIN:    msvc12
+
+        -   LLVM_VERSION: 3.9.1
+            TOOLCHAIN:    msvc14
+
+install:
+    - git submodule update --init
+    - call jancy\ci\appveyor\set-env.bat %TOOLCHAIN% %PLATFORM%
+    - call jancy\ci\appveyor\install.bat
+
+build_script:
+    - mkdir build
+    - cd build
+    - cmake .. %CMAKE_CONFIGURE_FLAGS%
+    - cmake --build . %CMAKE_BUILD_FLAGS%
+
+test_script:
+    - ctest -C %CONFIGURATION% --output-on-failure
