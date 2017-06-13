@@ -13,51 +13,27 @@ Jancy
 =====
 .. image:: https://travis-ci.org/vovkos/jancy_b.svg?branch=master
 	:target: https://travis-ci.org/vovkos/jancy_b
+.. image:: https://ci.appveyor.com/api/projects/status/hiej06p166untd0u?svg=true
+	:target: https://ci.appveyor.com/project/vovkos/jancy-b
 
 Abstract
 --------
 
-Jancy is a **scripting programming language** with the **LLVM** back-end. Jancy offers a lot of convenient features for low-level IO (input-output) and UI (user-interface) programming which are not found in mainstream languages (and sometimes, nowhere else). This includes **safe pointer** arithmetics, high level of source-level and ABI **compatibility with C**, **reactive programming**, built-in generator of **incremental lexers/scanners** and a lot more.
+``jancy_b`` is a helper *bundle repository* for the **Jancy** project. It contains `Jancy <https://github.com/vovkos/jancy>`_, `Graco <https://github.com/vovkos/graco>`_, and `AXL <https://github.com/vovkos/axl>`_ as *git submodules* and provides a straightforward build sequence:
 
-Design Principles
------------------
+.. code-block:: bash
 
-* Object-oriented scripting language for IO and UI programming with C-family syntax
-* ABI (application-binary-interface) compatibility with C
-* Automatic memory management via accurate GC (garbage collection)
-* LLVM (Low Level Virtual Machine) as a back-end
+	# clone bundle repo
 
-Key Features
-------------
+	git clone https://github.com/vovkos/jancy_b
+	cd jancy_b
+	git submodule update --init
 
-* Safe pointers and pointer arithmetic
-* Unprecedented for scripting languages source-level compatibility with C
-* Built-in Reactive Programming support
-* Built-in regexp-based generator of incremental lexers/scanners
-* Deterministic resource release
-* Error handling model which allows both throw-catch semantics and error code checks -- with the same function!
+	# build
 
-Other Notable Features
-----------------------
+	mkdir build
+	cd build
+	cmake ..
+	cmake --build .
 
-* Properties (the most comprehensive implementation thereof)
-* Multicasts and events (including weak events, which do not require to unsubscribe)
-* Multiple inheritance
-* Const-correctness
-* Thread local storage
-* Weak pointers (do not retain objects)
-* Partial application for functions and properties
-* Scheduled function pointers
-* Bitflag enums
-* Perl-style formatting
-* Hexadimal, binary and multi-line literals
-
-Documentation
--------------
-
-* `Jancy Language Manual <http://docs.tibbo.com/jancy/language>`_
-* `Jancy Standard Library Reference <http://docs.tibbo.com/jancy/stdlib>`_
-* `Jancy C API Reference <http://docs.tibbo.com/jancy/api>`_
-* `Jancy Compiler Overivew <http://docs.tibbo.com/jancy/compiler>`_
-* `Jancy Grammar Reference <http://docs.tibbo.com/jancy/grammar>`_
-* `Jancy Build Guide <http://docs.tibbo.com/jancy/build-guide>`_
+``jancy_b`` is automatically updated each time a new commit to the ``master`` branch of `Jancy <https://github.com/vovkos/jancy>`_ successfully passes build and test stages on both `Travis CI <https://travis-ci.org/vovkos/jancy>`_ and `AppVeyor CI <https://ci.appveyor.com/project/vovkos/jancy>`_.
