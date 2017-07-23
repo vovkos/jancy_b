@@ -23,6 +23,11 @@ include (axl/cmake/import_axl.cmake)
 add_subdirectory (graco)
 include (graco/cmake/import_graco.cmake)
 
+if (EXPAT_FOUND)
+	add_subdirectory (doxyrest)
+	include (doxyrest/cmake/import_doxyrest.cmake)
+endif ()
+
 add_subdirectory (jancy)
 
 #...............................................................................

@@ -15,6 +15,8 @@ set (
 	LUA_INC_DIR
 	LUA_LIB_DIR
 	LUA_LIB_NAME
+	EXPAT_INC_DIR
+	EXPAT_LIB_DIR
 	LLVM_INC_DIR
 	LLVM_LIB_DIR
 	LLVM_CMAKE_DIR
@@ -45,6 +47,7 @@ set (
 		7z
 
 	OPTIONAL
+		expat
 		pcap
 		libssh2
 		libusb
@@ -59,11 +62,5 @@ set (
 if (UNIX AND NOT APPLE)
 	set (AXL_IMPORT_LIST ${AXL_IMPORT_LIST} OPTIONAL libudev)
 endif ()
-
-set (
-	AXL_IMPORT_DIR_LIST
-
-	${DOXYREST_CMAKE_DIR}
-	)
 
 #...............................................................................
