@@ -10,3 +10,7 @@
 	path = graco
 	url = https://github.com/vovkos/graco
 	pushurl = git@github.com:vovkos/graco.git
+[submodule "doxyrest"]
+	path = doxyrest
+	url = https://github.com/vovkos/doxyrest
+	pushurl = git@github.com:vovkos/doxyrest.git
