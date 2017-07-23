@@ -20,6 +20,8 @@ set (
 	LLVM_CMAKE_DIR
 	PCAP_INC_DIR
 	PCAP_LIB_DIR
+	LIBUSB_INC_DIR
+	LIBUSB_LIB_DIR
 	LIBSSH2_INC_DIR
 	LIBSSH2_LIB_DIR
 	OPENSSL_INC_DIR
@@ -45,6 +47,7 @@ set (
 	OPTIONAL
 		pcap
 		libssh2
+		libusb
 		openssl
 		doxygen
 		doxyrest
