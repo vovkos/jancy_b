@@ -49,8 +49,9 @@ matrix:
           env: LLVM_VERSION=3.9.1 CPP_STD=c++11 TARGET_CPU=x86 BUILD_CONFIGURATION=Release
 
 install:
-    - source jancy/ci/travis/install-$TRAVIS_OS_NAME.sh
-    - source jancy/ci/travis/download-llvm.sh
+    - source jancy/ci/travis/set-env.sh
+    - bash jancy/ci/travis/install-$TRAVIS_OS_NAME.sh
+    - bash -e jancy/ci/travis/download-llvm.sh
 
 script:
     - echo "if (NOT \"$CPP_STD\" STREQUAL \"\")" >> settings.cmake
