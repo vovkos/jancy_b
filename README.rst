@@ -19,7 +19,7 @@ Jancy (bundle repo)
 Abstract
 --------
 
-``jancy_b`` is a helper *bundle repository* for the **Jancy** project. It contains `Jancy <https://github.com/vovkos/jancy>`_, `Graco <https://github.com/vovkos/graco>`_, and `AXL <https://github.com/vovkos/axl>`_ as *git submodules* and provides a straightforward build sequence:
+``jancy_b`` is a helper *bundle repository* for the **Jancy** project. It contains `Jancy <https://github.com/vovkos/jancy>`_, `Graco <https://github.com/vovkos/graco>`_, `Doxyrest <https://github.com/vovkos/doxyrest>`_, and `AXL <https://github.com/vovkos/axl>`_ as *git submodules* and provides a straightforward build sequence:
 
 .. code-block:: bash
 
