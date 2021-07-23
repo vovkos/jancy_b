@@ -11,10 +11,13 @@
 
 Jancy (bundle repo)
 ===================
-.. image:: https://travis-ci.org/vovkos/jancy_b.svg?branch=master
-	:target: https://travis-ci.org/vovkos/jancy_b
+.. image:: https://github.com/vovkos/jancy_b/actions/workflows/ci.yml/badge.svg
+	:target: https://github.com/vovkos/jancy_b/actions/workflows/ci.yml
 .. image:: https://ci.appveyor.com/api/projects/status/hiej06p166untd0u?svg=true
 	:target: https://ci.appveyor.com/project/vovkos/jancy-b
+.. image:: https://img.shields.io/badge/donate-@jancy.org-blue.svg
+	:align: right
+	:target: http://jancy.org/donate.html?donate=jancy
 
 Abstract
 --------
