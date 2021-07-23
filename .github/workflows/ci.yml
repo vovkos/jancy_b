@@ -32,8 +32,8 @@ jobs:
             run: |
                 set CONFIGURATION=${{matrix.CONFIGURATION}}
                 set LLVM_VERSION=${{matrix.LLVM_VERSION}}
-                call ci\github-actions\set-env.bat msvc15 ${{matrix.TARGET_CPU}}
-                call ci\github-actions\install-windows.bat
+                call jancy\ci\github-actions\set-env.bat msvc15 ${{matrix.TARGET_CPU}}
+                call jancy\ci\github-actions\install-windows.bat
 
         -   name: Build and test
             shell: cmd
@@ -43,7 +43,7 @@ jobs:
                 set THIS_DIR=%CD%
                 set THIS_DIR_CMAKE=%THIS_DIR:\=/%
 
-                call ci\github-actions\set-env.bat msvc15 ${{matrix.TARGET_CPU}}
+                call jancy\ci\github-actions\set-env.bat msvc15 ${{matrix.TARGET_CPU}}
 
                 mkdir build
                 cd build
@@ -77,7 +77,7 @@ jobs:
             shell: bash
             run: |
                 export TARGET_CPU=${{matrix.TARGET_CPU}}
-                source ./ci/github-actions/install-linux.sh
+                source ./jancy/ci/github-actions/install-linux.sh
 
         -   name: Build and test
             shell: bash
@@ -110,7 +110,7 @@ jobs:
             shell: bash
             run: |
                 pwd
-                source ./ci/github-actions/install-osx.sh
+                source ./jancy/ci/github-actions/install-osx.sh
 
         -   name: Build and test
             shell: bash
