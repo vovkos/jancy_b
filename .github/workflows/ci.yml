@@ -37,6 +37,10 @@ jobs:
                 call jancy\ci\github-actions\set-env.bat msvc15 ${{matrix.TARGET_CPU}}
                 call jancy\ci\github-actions\install-windows.bat
 
+        -   name: Setup NASM
+            uses: ilammy/setup-nasm@v1
+            if: ${{ matrix.TARGET_CPU == 'amd64' }}
+
         -   name: Build and test
             shell: cmd
             run: |
