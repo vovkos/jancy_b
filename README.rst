@@ -13,8 +13,6 @@ Jancy (bundle repo)
 ===================
 .. image:: https://github.com/vovkos/jancy_b/actions/workflows/ci.yml/badge.svg
 	:target: https://github.com/vovkos/jancy_b/actions/workflows/ci.yml
-.. image:: https://ci.appveyor.com/api/projects/status/hiej06p166untd0u?svg=true
-	:target: https://ci.appveyor.com/project/vovkos/jancy-b
 .. image:: https://img.shields.io/badge/donate-@jancy.org-blue.svg
 	:align: right
 	:target: http://jancy.org/donate.html?donate=jancy
@@ -39,4 +37,4 @@ Abstract
 	cmake ..
 	cmake --build .
 
-``jancy_b`` is automatically updated each time a new commit to the ``master`` branch of `Jancy <https://github.com/vovkos/jancy>`_ successfully passes build and test stages on both `Travis CI <https://travis-ci.org/vovkos/jancy>`_ and `AppVeyor CI <https://ci.appveyor.com/project/vovkos/jancy>`_.
+``jancy_b`` is automatically updated each time a new commit to the ``master`` branch of `Jancy <https://github.com/vovkos/jancy>`_ successfully passes build and test stages on `GitHub Action <https://github.com/vovkos/jancy/actions>`_.
