@@ -20,12 +20,12 @@ jobs:
                 -   amd64
 
                 LLVM_VERSION:
-                -   3.4.2
-                -   8.0.0
+                -   llvm-3.4.2
+                -   llvm-8.0.0
 
         steps:
         -   name: Checkout repo
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
             with:
                 submodules: true
 
@@ -59,7 +59,7 @@ jobs:
 
     linuxBuild:
         name: Linux Build
-        runs-on: ubuntu-18.04
+        runs-on: ubuntu-20.04
         strategy:
             fail-fast: false
             matrix:
@@ -75,9 +75,13 @@ jobs:
                 -   clang
                 -   gcc
 
+                LLVM_VERSION:
+                -   llvm-9
+                -   llvm-12
+
         steps:
         -   name: Checkout repo
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
             with:
                 submodules: true
 
@@ -85,6 +89,7 @@ jobs:
             shell: bash
             run: |
                 export TARGET_CPU=${{matrix.TARGET_CPU}}
+                export LLVM_VERSION=${{matrix.LLVM_VERSION}}
                 source ./jancy/ci/github-actions/install-linux.sh
 
         -   name: Build and test
@@ -102,7 +107,7 @@ jobs:
 
     macOsBuild:
         name: macOS Build
-        runs-on: macos-10.15
+        runs-on: macos-11
         strategy:
             fail-fast: false
             matrix:
@@ -110,16 +115,20 @@ jobs:
                 -   Debug
                 -   Release
 
+                LLVM_VERSION:
+                -   llvm@8
+                -   llvm@15
+
         steps:
         -   name: Checkout repo
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
             with:
                 submodules: true
 
         -   name: Install
             shell: bash
             run: |
-                pwd
+                export LLVM_VERSION=${{matrix.LLVM_VERSION}}
                 source ./jancy/ci/github-actions/install-osx.sh
 
         -   name: Build and test
