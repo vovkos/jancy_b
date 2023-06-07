@@ -9,9 +9,9 @@
 #
 #...............................................................................
 
-project (jancy_b)
+cmake_minimum_required(VERSION 3.16)
 
-cmake_minimum_required (VERSION 3.3)
+project (jancy_b)
 
 include (axl/cmake/axl_cmake.cmake NO_POLICY_SCOPE)
 
