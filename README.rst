@@ -37,4 +37,4 @@ Abstract
 	cmake ..
 	cmake --build .
 
-``jancy_b`` is automatically updated each time a new commit to the ``master`` branch of `Jancy <https://github.com/vovkos/jancy>`_ successfully passes build and test stages on `GitHub Action <https://github.com/vovkos/jancy/actions>`_.
+``jancy_b`` is automatically updated each time a new commit to the ``master`` branch of `Jancy <https://github.com/vovkos/jancy>`_ successfully passes build and test stages on `GitHub Actions <https://github.com/vovkos/jancy/actions/workflows/ci.yml>`_.
