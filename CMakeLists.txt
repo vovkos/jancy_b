@@ -17,14 +17,25 @@ include (axl/cmake/axl_cmake.cmake NO_POLICY_SCOPE)
 
 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-add_subdirectory (axl)
+add_subdirectory (axl EXCLUDE_FROM_ALL)
 include (axl/cmake/import_axl.cmake)
 
-add_subdirectory (graco)
+if(TARGET axl_glibc)
+	# force build axl_glibc
+	# we link to axl_glibc using CMAKE_STANDARD_LIBRARIES; as such,
+	# axl_glibc is not a direct dependency and will be skipped otherwise
+
+	add_custom_target(
+		force_build_axl_glibc ALL
+		DEPENDS axl_glibc
+	)
+endif()
+
+add_subdirectory (graco EXCLUDE_FROM_ALL)
 include (graco/cmake/import_graco.cmake)
 
 if (EXPAT_FOUND)
-	add_subdirectory (doxyrest)
+	add_subdirectory (doxyrest EXCLUDE_FROM_ALL)
 	include (doxyrest/cmake/import_doxyrest.cmake)
 endif ()
 
