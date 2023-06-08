@@ -37,6 +37,7 @@ add_subdirectory (graco EXCLUDE_FROM_ALL)
 include (graco/cmake/import_graco.cmake)
 
 if (EXPAT_FOUND)
+	set(BUILD_DOXYREST_SAMPLES OFF CACHE BOOL "Doxyrest samples disabled" FORCE)
 	add_subdirectory (doxyrest EXCLUDE_FROM_ALL)
 	include (doxyrest/cmake/import_doxyrest.cmake)
 endif ()
