@@ -71,10 +71,6 @@ jobs:
                 -   x86
                 -   amd64
 
-                COMPILER:
-                -   clang
-                -   gcc
-
                 LLVM_VERSION:
                 -   llvm-9
                 -   llvm-12
@@ -104,6 +100,9 @@ jobs:
                 cmake .. -DTARGET_CPU=${{matrix.TARGET_CPU}} -DCMAKE_BUILD_TYPE=${{matrix.CONFIGURATION}}
                 make
                 ctest --output-on-failure
+
+                cmake . -DJANCY_TEST_JIT_KIND=--orc -DJANCY_TEST_DEBUG_INFO=
+                if [[ ${{matrix.LLVM_VERSION}} != "llvm-9" ]]; then ctest --output-on-failure; fi
 
     macOsBuild:
         name: macOS Build
@@ -140,4 +139,7 @@ jobs:
                 cd build
                 cmake .. -DCMAKE_BUILD_TYPE=${{matrix.CONFIGURATION}}
                 make
+                ctest --output-on-failure
+
+                cmake . -DJANCY_TEST_JIT_KIND=--orc -DJANCY_TEST_DEBUG_INFO=
                 ctest --output-on-failure
