@@ -42,6 +42,7 @@ set (
 	AXL_IMPORT_LIST
 		lua
 		llvm
+		re2s
 		ragel
 		perl
 		7z

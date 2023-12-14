@@ -14,3 +14,7 @@
 	path = doxyrest
 	url = https://github.com/vovkos/doxyrest
 	pushurl = git@github.com:vovkos/doxyrest.git
+[submodule "re2s"]
+	path = re2s
+	url = https://github.com/vovkos/re2s
+	branch = re2s-no-abseil

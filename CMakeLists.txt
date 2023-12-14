@@ -13,6 +13,13 @@ cmake_minimum_required(VERSION 3.16)
 
 project (jancy_b)
 
+#. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+set(RE2_BUILD_TESTING OFF CACHE BOOL "RE2 tests disabled" FORCE)
+add_subdirectory(re2s)
+
+#. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
 include (axl/cmake/axl_cmake.cmake NO_POLICY_SCOPE)
 
 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
