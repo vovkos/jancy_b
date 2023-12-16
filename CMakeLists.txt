@@ -15,8 +15,17 @@ project (jancy_b)
 
 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
-set(RE2_BUILD_TESTING OFF CACHE BOOL "RE2 tests disabled" FORCE)
-add_subdirectory(re2s)
+if(UNIX)
+	# build with -fPIC (and possibly -m32)
+	set(_PREV_CXX_FLAGS ${CMAKE_CXX_FLAGS})
+	set(CMAKE_CXX_FLAGS "-fPIC ${CMAKE_CXX_FLAGS}")
+	if(TARGET_CPU STREQUAL "x86")
+		set(CMAKE_CXX_FLAGS "-m32 ${CMAKE_CXX_FLAGS}")
+	endif()
+	set(RE2_BUILD_TESTING OFF CACHE BOOL "RE2 tests disabled" FORCE)
+	add_subdirectory(re2s)
+	set(CMAKE_CXX_FLAGS ${_PREV_CXX_FLAGS})
+endif()
 
 #. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
