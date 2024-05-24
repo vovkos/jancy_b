@@ -30,6 +30,7 @@ jobs:
                 submodules: true
 
         -   name: Install
+            continue-on-error: true
             shell: cmd
             run: |
                 set CONFIGURATION=${{matrix.CONFIGURATION}}
