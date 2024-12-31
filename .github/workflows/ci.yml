@@ -21,7 +21,7 @@ jobs:
 
                 LLVM_VERSION:
                 -   llvm-3.4.2
-                -   llvm-8.0.0
+                -   llvm-8.0.1
 
         steps:
         -   name: Checkout repo
@@ -117,8 +117,8 @@ jobs:
                 -   Release
 
                 LLVM_VERSION:
-                -   llvm@13
                 -   llvm@15
+                -   llvm@17
 
         steps:
         -   name: Checkout repo
