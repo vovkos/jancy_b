@@ -35,7 +35,7 @@ jobs:
             run: |
                 set CONFIGURATION=${{matrix.CONFIGURATION}}
                 set LLVM_VERSION=${{matrix.LLVM_VERSION}}
-                call jancy\ci\github-actions\set-env.bat msvc16 ${{matrix.TARGET_CPU}}
+                call jancy\ci\github-actions\set-env.bat ${{matrix.TARGET_CPU}}
                 call jancy\ci\github-actions\install-windows.bat
 
         -   name: Setup NASM
@@ -50,7 +50,7 @@ jobs:
                 set THIS_DIR=%CD%
                 set THIS_DIR_CMAKE=%THIS_DIR:\=/%
 
-                call jancy\ci\github-actions\set-env.bat msvc16 ${{matrix.TARGET_CPU}}
+                call jancy\ci\github-actions\set-env.bat ${{matrix.TARGET_CPU}}
                 call axl\ci\github-actions\build-lua.bat
 
                 mkdir build
