@@ -8,6 +8,7 @@ jobs:
     windowsBuild:
         name: Windows Build
         runs-on: windows-2022
+
         strategy:
             fail-fast: false
             matrix:
@@ -61,7 +62,8 @@ jobs:
 
     linuxBuild:
         name: Linux Build
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-24.04
+
         strategy:
             fail-fast: false
             matrix:
@@ -108,10 +110,15 @@ jobs:
 
     macOsBuild:
         name: macOS Build
-        runs-on: macos-13
+        runs-on: ${{ matrix.OS }}
+
         strategy:
             fail-fast: false
             matrix:
+                OS:
+                -   macos-15
+                -   macos-15-intel
+
                 CONFIGURATION:
                 -   Debug
                 -   Release
